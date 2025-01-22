@@ -69,28 +69,39 @@ function handleDOM(
       return
     }
 
-    if (
-      !$entry.className.includes('hlt_') ||
-      $entry.classList.contains('hlt_CPRHT') ||
-      $entry.classList.contains('hlt_RLTED')
-    ) {
+    // if (
+    //   !$entry.className.includes('hlt_') ||
+    //   $entry.classList.contains('hlt_CPRHT') ||
+    //   $entry.classList.contains('hlt_RLTED')
+    // ) {
+    //   return
+    // }
+
+    const title = ''
+    // let $title = $entry.querySelector('.wrp')
+    // if ($title) {
+    //   title = getText($title, '.dictNm')
+    //   if (title.includes('Wiktionary')) {
+    //     return
+    //   }
+    //   $title.remove()
+    // } else {
+    //   $title = $entry.querySelector('.qotH')
+    //   if ($title) {
+    //     title = getText($title, '.qotHT')
+    //     $title.remove()
+    //   }
+    // }
+
+    const JMDCTAnchor = $entry.querySelector('[name="JMDCT"]')
+    if (!JMDCTAnchor) {
       return
     }
+    JMDCTAnchor.remove()
 
-    let title = ''
-    let $title = $entry.querySelector('.wrp')
-    if ($title) {
-      title = getText($title, '.dictNm')
-      if (title.includes('Wiktionary')) {
-        return
-      }
-      $title.remove()
-    } else {
-      $title = $entry.querySelector('.qotH')
-      if ($title) {
-        title = getText($title, '.qotHT')
-        $title.remove()
-      }
+    const tableWrp = $entry.querySelector('table.wrp')
+    if (tableWrp) {
+      tableWrp.remove()
     }
 
     removeChildren($entry, '.hideDictWrp')

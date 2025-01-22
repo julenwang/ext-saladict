@@ -7,18 +7,18 @@ browser.runtime.sendMessage['_sender'].callsFake(() => ({
   }
 }))
 
-// mock dict search requests
-const dictMock = new AxiosMockAdapter(axios)
-const dictMockReq = require.context(
-  '../../../test/specs/components/dictionaries/',
-  true,
-  /requests\.mock\.ts$/
-)
-dictMockReq.keys().forEach(filename => {
-  const { mockRequest } = dictMockReq(filename)
-  mockRequest(dictMock)
-})
-dictMock.onAny().reply(config => {
-  console.warn(`Unmatch url: ${config.url}`, config)
-  return [404, {}]
-})
+// // mock dict search requests
+// const dictMock = new AxiosMockAdapter(axios)
+// const dictMockReq = require.context(
+//   '../../../test/specs/components/dictionaries/',
+//   true,
+//   /requests\.mock\.ts$/
+// )
+// dictMockReq.keys().forEach(filename => {
+//   const { mockRequest } = dictMockReq(filename)
+//   mockRequest(dictMock)
+// })
+// dictMock.onAny().reply(config => {
+//   console.warn(`Unmatch url: ${config.url}`, config)
+//   return [404, {}]
+// })

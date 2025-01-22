@@ -4,9 +4,9 @@
   "description": "Chrome extension and Firefox WebExtension; inline translator powered by multiple online dictionaries",
   "private": true,
   "scripts": {
-    "start": "webpack-dev-server --mode development --open --debug",
+    "start": "webpack-dev-server --mode development --open --debug --port 5500",
     "storybook": "start-storybook",
-    "build": "webpack --mode production",
+    "build": "webpack --mode production --debug",
     "postbuild": "node scripts/firefox-fix.js",
     "devbuild": "webpack --mode development",
     "type-check": "tsc --noEmit",

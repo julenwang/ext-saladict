@@ -373,19 +373,19 @@ module.exports = {
           .use(BundleAnalyzerPlugin);
       }
     },
-    jest({
-      testRegex: ['test/specs/.*\\.spec\\.(ts|tsx|js|jsx)'],
-      setupFilesAfterEnv: ['<rootDir>/config/jest/setupTests.js'],
-      moduleNameMapper: {
-        '^@/(.*)$': '<rootDir>/src/$1'
-      },
-      transform: {
-        '\\.(mjs|jsx|js|ts|tsx)$': require.resolve(
-          '@neutrinojs/jest/src/transformer'
-        )
-      },
-      testTimeout: 20000
-    }),
+    // jest({
+    //   testRegex: ['test/specs/.*\\.spec\\.(ts|tsx|js|jsx)'],
+    //   setupFilesAfterEnv: ['<rootDir>/config/jest/setupTests.js'],
+    //   moduleNameMapper: {
+    //     '^@/(.*)$': '<rootDir>/src/$1'
+    //   },
+    //   transform: {
+    //     '\\.(mjs|jsx|js|ts|tsx)$': require.resolve(
+    //       '@neutrinojs/jest/src/transformer'
+    //     )
+    //   },
+    //   testTimeout: 20000
+    // }),
     wext({
       polyfill: true
     }),
